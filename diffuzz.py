@@ -16,12 +16,12 @@ def hash_file(filepath):
 
 def diff_files(filepath1, filepath2):
     with open(filepath1, 'r') as fp1:
-        buf1 = fp1.read()
+        buf1 = fp1.readlines()
         fp1.close
     with open(filepath2, 'r') as fp2:
-        buf2 = fp2.read()
+        buf2 = fp2.readlines()
         fp2.close
-    pprint.pprint(deepdiff.DeepDiff(buf1, buf2))
+        pprint.pprint(deepdiff.DeepDiff(buf1, buf2)["diff"])
 
 
 
