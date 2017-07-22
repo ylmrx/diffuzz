@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(
-    name='CHDiff',
+    name='DifFuzz',
     version='0.0.1',
-    py_modules=['chdiff'],
+    py_modules=['diffuzz'],
     install_requires=[
         'deepdiff',
         'click',
@@ -11,7 +11,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        chdiff=chdiff:main
+        diffuzz=diffuzz:main
     ''',
     author='Yoann Lamouroux',
     author_email='yla@nbs-system.com'
