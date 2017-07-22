@@ -1,3 +1,4 @@
 example_content/
 chd/
+*.egg-info/
 *.pyc
