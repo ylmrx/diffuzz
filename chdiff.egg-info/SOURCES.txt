@@ -1,0 +1,13 @@
+chdiff.py
+CHDiff.egg-info/PKG-INFO
+CHDiff.egg-info/SOURCES.txt
+CHDiff.egg-info/dependency_links.txt
+CHDiff.egg-info/entry_points.txt
+CHDiff.egg-info/requires.txt
+CHDiff.egg-info/top_level.txt
+chdiff.egg-info/PKG-INFO
+chdiff.egg-info/SOURCES.txt
+chdiff.egg-info/dependency_links.txt
+chdiff.egg-info/entry_points.txt
+chdiff.egg-info/requires.txt
+chdiff.egg-info/top_level.txt
