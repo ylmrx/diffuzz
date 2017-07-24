@@ -4,3 +4,6 @@ dist: xenial
 
 install:
   - pip install --editable .
+  
+script:
+  - diffuzz --help
