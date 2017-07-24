@@ -77,7 +77,7 @@ def main(verbose, out, older, newer, diff, ext):
         for f in finder.keys():
             two_hashes.update({f: hash_file(os.path.join(start_directory, f, i))})
         if two_hashes.values()[0] == two_hashes.values()[1]:
-            print colored("MATCH : %s -- %s" % (two_hashes.values()[0], i), 'green')
+            print colored("OK : %s -- %s" % (two_hashes.values()[0], i), 'green')
         else:
             print colored("NOP : %s/%s -- %s" % (two_hashes.values()[0], two_hashes.values()[1], i), 'red')
             if diff:
