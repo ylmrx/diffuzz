@@ -5,7 +5,6 @@ setup(
     version='0.0.1',
     py_modules=['diffuzz'],
     install_requires=[
-        'deepdiff',
         'click',
         'termcolor'
     ],

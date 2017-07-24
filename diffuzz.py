@@ -1,6 +1,6 @@
 import os, sys
 import logging
-import deepdiff
+import difflib
 import click
 from termcolor import colored
 import hashlib
@@ -15,15 +15,15 @@ def hash_file(filepath):
     return hasher.digest().encode('base64')[:7]
 
 def diff_files(filepath1, filepath2):
-    with open(filepath1, 'r') as fp1:
-        buf1 = fp1.readlines()
-        fp1.close
-    with open(filepath2, 'r') as fp2:
-        buf2 = fp2.readlines()
-        fp2.close
-        pprint.pprint(deepdiff.DeepDiff(buf1, buf2)["diff"])
-
-
+    fromlines = open(filepath1, 'U').readlines()
+    tolines = open(filepath2, 'U').readlines()
+    diff = difflib.context_diff(fromlines, tolines,
+            filepath1, filepath2, n=0)
+    # we're using writelines because diff is a generator
+    #sys.stdout.writelines(diff)
+    #for line in list(diff):
+    #    click.echo(click.style(line, fg="blue"))
+    click.echo(''.join(list(diff)))
 
 def many_files(start_directory, f, ext):
     many = []
@@ -83,4 +83,3 @@ def main(verbose, out, older, newer, diff, ext):
             if diff:
                 diff_files(os.path.join(start_directory, finder.keys()[0], i),
                         os.path.join(start_directory, finder.keys()[1], i))
-
